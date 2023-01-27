@@ -1,0 +1,19 @@
+.Form{
+display: grid;
+justify-content: center;
+padding-top: 40px;
+}
+
+.form_input{
+max-width: 300px;
+border: 3px solid #ccc;
+outline: none;
+transition: all .5s ease-in-out;
+
+}
+
+.form_input:focus{
+border: 3px solid #555;
+
+
+}
