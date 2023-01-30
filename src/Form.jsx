@@ -4,6 +4,7 @@ function Form() {
     const [text, setText] = useState("")
     const Fouc = useRef()
 
+
     console.log(text)
 
     useEffect(() => {
@@ -15,7 +16,7 @@ function Form() {
         <input ref={Fouc} className="form_input" min="3" onChange={(e) => setText(e.target.value)} required value={text} type="text" maxLength="15" />
         <button style={{
             "borderRadius": "0px 0px 13px 13px",
-            "background-color": "#a8a5a54d",
+            "backgroundColor": "#a8a5a54d",
             "border": "1px solid", "cursor": " pointer"
         }} type="submit" onClick={() => {
             Fouc.current.focus();

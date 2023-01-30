@@ -22,3 +22,7 @@ transition: all .4s ease-in-out;
 color: white;
 
 }
+.active{
+color: white;
+
+}

@@ -1,26 +1,28 @@
-import React,{useState,useEffect} from "react";
+import React,{useContext} from "react";
+import { Name } from ".";
 import "./nav.css"
+import { home , contact , project } from "./action";
+import  { useSelector, useDispatch } from "react-redux";
+
+
 function Nav(){
-const [select_text , Take_Text] = useState("")
+
+const state = useSelector(state => state.Changer);
+
+const dispatch = useDispatch();
+
+const Named = useContext(Name)
 
 
 
-
-useEffect(()=>{
-console.log(select_text)
-console.log("Resource Type Change")
-return ()=>{
-console.log("return")
-}
-
-},[select_text])
 
 return <>
 <nav className="Nav">
 <ul className="Nav_head">
-<li className="List_nav" onClick={()=> Take_Text("Home")}>Home</li>
-<li className="List_nav" onClick={()=> Take_Text("Contact")}>Contact</li>
-<li className="List_nav" onClick={()=> Take_Text("Project")}>Project</li>
+<li className={state.home? "List_nav active":"List_nav"} onClick={()=> dispatch(home())}>Home</li>
+<li className={state.contact? "List_nav active":"List_nav"} onClick={()=> dispatch(contact())}>Contact</li>
+<li className={state.project? "List_nav active":"List_nav"} onClick={()=> dispatch(project())}>Project</li>
+<li className={"List_nav"}> {Named}</li>
 </ul>
 
 </nav>
